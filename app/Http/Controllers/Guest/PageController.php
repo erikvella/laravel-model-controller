@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Guest;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Movie;
 
 class PageController extends Controller
 {
@@ -13,7 +14,9 @@ class PageController extends Controller
 
 
     public function mieiFilm(){
-        return view('mieifilm');
+        $movies = Movie::all();
+         dump($movies);
+        return view('mieifilm' , compact('movies'));
     }
 
 
